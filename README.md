@@ -9,6 +9,9 @@ créer une classe View
 
 supprimer les affichages des class MacGyver, Lab.., Items, Guard
 Supprimer Guard et l'instancier dans labyrinth (ou pas je sais pas) c plus lisible ainsi et on peu en rajouter pour more lvl
+modifier le nom du fichier labyrinth en Game et mettre tout ce qui arrive avant les inputs dans une fonction game 
+créer une fonction main dans le main les inputs et la suite de labyrinth
+puis je verrai après corrections des bugs ... RHUM
 
 view.py 
   init 
