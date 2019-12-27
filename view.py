@@ -45,8 +45,9 @@ class View():
 
     def create(self, structure):
         x, y = 0, 0
-        for raw in structure:
-            for sprite in raw:
+        for y in range(constants.NSPRITE):
+            for x in range(constants.NSPRITE):
+                sprite = structure[(x, y)]
                 if sprite == '1':
                     self.screen.blit(self.wall, (x * constants.PXSPRITE, y * constants.PXSPRITE))
                 elif sprite == '0':
@@ -71,3 +72,21 @@ class View():
         self.screen.blit(self.macgyver, (next_location[0] * constants.PXSPRITE, next_location[1] * constants.PXSPRITE))
         pygame.display.flip()
 
+    def hero_pick(self, char, n_item):
+        if char == 'E':
+            self.screen.blit(self.ether, (constants.NSPRITE * constants.PXSPRITE, (n_item - 1) * constants.PXSPRITE))
+        elif char == 'T':
+            self.screen.blit(self.thumb, (constants.NSPRITE * constants.PXSPRITE, (n_item - 1) * constants.PXSPRITE))
+        elif char == 'N':
+            self.screen.blit(self.needle, (constants.NSPRITE * constants.PXSPRITE, (n_item - 1) * constants.PXSPRITE))
+        if n_item == 3:
+            self.screen.blit(self.suringe, (constants.NSPRITE * constants.PXSPRITE, n_item * constants.PXSPRITE))
+        pygame.display.flip()
+
+    def finish(self, n_item):
+        if n_item == 3:
+            self.screen.blit(self.win, (0, 0))
+
+        else:
+             self.screen.blit(self.loose,(0, 0))
+        pygame.display.flip()
