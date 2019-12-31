@@ -1,3 +1,5 @@
+# usr/bin/env python3
+# coding: utf-8
 import pygame
 from pygame.locals import *
 
@@ -12,37 +14,36 @@ def game():
 
     level = Labyrinth()
     level.open_csv(constants.CSV_LEVEL, constants.NSPRITE)
-    print(level.structure)
 
     hero = Macgyver()
     hero.create(level.structure)
-    print(hero.location)
 
-    end = Guard() 
-    end.create(level.structure)
-    print(end.location)
+    guard = Guard() 
+    guard.create(level.structure)
    
     ether = Item()
     ether.create(level.ground_list, level.structure, 'E')
-    print(ether.location)
 
     thumb = Item()
     thumb.create(level.ground_list, level.structure, 'T')
-    print(thumb.location)
 
     needle = Item()
     needle.create(level.ground_list, level.structure, 'N')
-    print(needle.location)
 
     screen = View()
     screen.load()
     screen.create(level.structure)
 
+    return level, hero, guard, ether, thumb, needle, screen
+    #running(level, hero, guard, ether, thumb, needle, screen)
+                    
+
+def running(level, hero, guard, ether, thumb, needle, screen):
     run = True
     while run:
         pygame.time.Clock().tick(30)
         event = pygame.event.wait()	#Attente des événementss
-        if event.type == pygame.QUIT or event.type == KEYDOWN and event.key == K_ESCAPE:
+        if event.type == pygame.QUIT or (event.type == KEYDOWN) and event.key == K_ESCAPE:
             run = False
             
         elif event.type == KEYDOWN:
@@ -56,12 +57,16 @@ def game():
                 elif needle.pick(level.structure, hero.location):
                     screen.hero_pick(needle.char, Item.n_item)
 
-                if (abs(hero.location[0] - end.location[0]) == 1 and hero.location[1] - end.location[1] == 0) \
-                or (hero.location[0] - end.location[0] == 0 and abs(hero.location[1] - end.location[1]) == 1):
+                if (abs(hero.location[0] - guard.location[0]) == 1 and hero.location[1] - guard.location[1] == 0) \
+                or (hero.location[0] - guard.location[0] == 0 and abs(hero.location[1] - guard.location[1]) == 1):
+                    print(Item.n_item)
                     screen.finish(Item.n_item)
+                    Item.n_item = 3
                     run = False
-                    
-    while run == False:
+
+def stopping():
+    end = True
+    while end:
         for events in pygame.event.get():
             if events.type == pygame.QUIT :
                 return False
@@ -70,11 +75,15 @@ def game():
                     return False                
                 elif (events.key == K_RETURN):
                     return True
-                                        
+
 def main():
-    start = True
-    while start == True:
-        start = game()
+    run = True
+    while run == True:
+        level, hero, guard, ether, thumb, needle, screen = game()
+        running(level, hero, guard, ether, thumb, needle, screen)
+
+        #running(level, hero, guard, ether, thumb, needle, screen)
+        run = stopping()
         
 if __name__ == '__main__':
     main()
