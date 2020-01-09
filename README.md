@@ -6,7 +6,7 @@ Il est enfermé dans un labyrinthe dans lequel il y a une seule sortie laquelle 
 MacGyver doit réunir trois objets pour créer une seringue afin d'endormir le gardien.
 Sinon il perd
 
-# Prérequis : 
+# Prérequis
 https://github.com/Keazu/projet-3
 Python 3.8
 
