@@ -1,14 +1,20 @@
-#Utilisation de GitHub, VirtualEnv, et GitBash
-Installer GitBash ou utiliser l'invite de commandes 
+#Python software fait avec Visual Studio code, Pygame, GitBash
 
-#Télécharger ceci 
+#Introduction
+C'est un jeu en 2D dans lequel le joueur incarne MacGyver. 
+Il est enfermé dans un labyrinthe dans lequel il y a une seule sortie laquelle est tenue par un gardien. 
+MacGyver doit réunir trois objets pour créer une seringue afin d'endormir le gardien.
+Sinon il perd
+
+#Prérequis : 
 https://github.com/Keazu/projet-3
+Python 3.8
 
 # Installation et utilisation de VirtualEnv
-Dans GitBash ou l'invite de commandes écrire ceci:
+Dans l'invite de commandes écrire ceci:
 	pip install virtualenv
 	
-# Création et atcivationd'un environnement virtuel
+# Création et atcivation d'un environnement virtuel
 	cd <chemin du dossier>
 	virtualenv -p python3 env
 	#Avec un Mac ou Linux
@@ -21,5 +27,3 @@ Dans GitBash ou l'invite de commandes écrire ceci:
 	
 # Lancement du jeu
 	python3 game.py
-	
-# HAVE FUN, No Bugs Certificated
