@@ -11,7 +11,7 @@ https://github.com/Keazu/projet-3
 Python 3.8
 
 # Installation et utilisation de VirtualEnv
-Dans l'invite de commandes écrire ceci:
+Dans l'invite de commandes écrire ceci :
 	pip install virtualenv
 	
 # Création et atcivation d'un environnement virtuel
