@@ -1,12 +1,12 @@
-#Python software fait avec Visual Studio code, Pygame, GitBash
+# Python software fait avec Visual Studio code, Pygame, GitBash
 
-#Introduction
+# Introduction
 C'est un jeu en 2D dans lequel le joueur incarne MacGyver. 
 Il est enfermé dans un labyrinthe dans lequel il y a une seule sortie laquelle est tenue par un gardien. 
 MacGyver doit réunir trois objets pour créer une seringue afin d'endormir le gardien.
 Sinon il perd
 
-#Prérequis : 
+# Prérequis : 
 https://github.com/Keazu/projet-3
 Python 3.8
 
