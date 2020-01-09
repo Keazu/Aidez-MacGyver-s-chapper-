@@ -22,7 +22,7 @@ Dans l'invite de commandes écrire ceci:
 	#Avec un PC
 	source env/Scripts/activate
 	
-# Installation des dépendances (Pygame) dans l'environnement virtuel
+# Installation des dépendances dans l'environnement virtuel
 	pip install -r requirements.txt
 	
 # Lancement du jeu
